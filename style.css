@@ -1,0 +1,43 @@
+*,
+::before,
+::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 18px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+#base {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 10%;
+  background-color: #10403b;
+  color: white;
+}
+header button {
+  font-size: 1rem;
+  font-weight: 900px;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  color: white;
+  border: 3px solid #8aa6a3;
+  border-radius: 0.5rem;
+}
+
+#sketch-pad {
+  display: grid;
+  height: 92vh;
+  /* border: 2px solid red; */
+}
+#sketch-pad div {
+  background-color: #8aa6a3;
+}
