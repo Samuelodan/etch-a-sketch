@@ -36,7 +36,6 @@ header button {
 #sketch-pad {
   display: grid;
   height: 92vh;
-  /* border: 2px solid red; */
 }
 #sketch-pad div {
   background-color: #8aa6a3;
