@@ -18,16 +18,8 @@ function newPad() {
 
 }
 
-function repeatString(string, number) {
-  let newString = ""
-  for (i = 1; i <= number; i++){
-    newString += string;
-  }
-  return newString;
-}
-
 function makeGrid(number) {
-  sketchPadElement.style.gridTemplateColumns = repeatString("1fr ", number);
+  sketchPadElement.style.gridTemplateColumns = " 1fr".repeat(number)
 }
 
 function makeDefaultGrids(gridCount) {
