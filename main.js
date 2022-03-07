@@ -18,8 +18,8 @@ sketchPadElement.addEventListener("mousemove", (e) => {
 // })
 
 
-// const newButton = document.querySelector("header button");
-// newButton.addEventListener("click", newPad);
+const newButton = document.querySelector("header button");
+newButton.addEventListener("click", newPad);
 
 function makeDivs(gridCount) {
   for (i = 1; i <= gridCount; i++){
