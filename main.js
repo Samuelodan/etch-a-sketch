@@ -1,8 +1,25 @@
 const sketchPadElement = document.getElementById("sketch-pad");
 
-sketchPadElement.addEventListener("mouseover", (e) => {
-  e.target.style.backgroundColor = "yellow";
-})
+let mouseisDown = false;
+
+sketchPadElement.addEventListener("mousedown", () => mouseisDown = true);
+sketchPadElement.addEventListener("mouseup", () => mouseisDown = false);
+sketchPadElement.addEventListener("dblclick", () => mouseisDown = true);
+sketchPadElement.addEventListener("mousemove", (e) => {
+  if (mouseisDown){
+    e.target.style.backgroundColor = "yellow";
+  }
+  
+});
+
+// //disable drag & drop
+// sketchPadElement.addEventListener("dragstart", (e) => {
+//   e.preventDefault();
+// })
+
+
+// const newButton = document.querySelector("header button");
+// newButton.addEventListener("click", newPad);
 
 function makeDivs(gridCount) {
   for (i = 1; i <= gridCount; i++){
@@ -12,13 +29,23 @@ function makeDivs(gridCount) {
 }
 
 function newPad() {
-  const gridRoot = prompt("How many boxes do you want per side?", "1 - 100");
+  const gridRoot = parseInt(prompt("How many boxes do you want per side?", "30"));
+  
+  if (gridRoot < 16 || gridRoot > 100){
+    alert("Make sure the number is between 16 and 100")
+    return newPad();
+  };
+
+  sketchPadElement.innerHTML = "";
   makeDivs(gridRoot**2);
   makeGrid(gridRoot)
 
 }
 
 function makeGrid(number) {
+  //Reset style
+  sketchPadElement.style.gridTemplateColumns = "";
+  //Add style
   sketchPadElement.style.gridTemplateColumns = " 1fr".repeat(number)
 }
 
