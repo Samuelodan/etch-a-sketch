@@ -32,6 +32,12 @@ header button {
   border: 3px solid #8aa6a3;
   border-radius: 0.5rem;
 }
+header button:hover {
+  background-color: #8aa6a3;
+  color: #10403b;
+  border: none;
+  cursor: pointer;
+}
 
 #sketch-pad {
   display: grid;

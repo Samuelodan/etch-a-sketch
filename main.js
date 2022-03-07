@@ -1,7 +1,7 @@
 const sketchPadElement = document.getElementById("sketch-pad");
 
+//Add double click or hold mouse to draw
 let mouseisDown = false;
-
 sketchPadElement.addEventListener("mousedown", () => mouseisDown = true);
 sketchPadElement.addEventListener("mouseup", () => mouseisDown = false);
 sketchPadElement.addEventListener("dblclick", () => mouseisDown = true);
@@ -9,13 +9,12 @@ sketchPadElement.addEventListener("mousemove", (e) => {
   if (mouseisDown){
     e.target.style.backgroundColor = "yellow";
   }
-  
 });
 
-// //disable drag & drop
-// sketchPadElement.addEventListener("dragstart", (e) => {
-//   e.preventDefault();
-// })
+//disable drag & drop
+sketchPadElement.addEventListener("dragstart", (e) => {
+  e.preventDefault();
+})
 
 
 const newButton = document.querySelector("header button");
@@ -54,5 +53,5 @@ function makeDefaultGrids(gridCount) {
   makeGrid(gridCount);
 }
 
-makeDefaultGrids(16);
+makeDefaultGrids(70);
 
